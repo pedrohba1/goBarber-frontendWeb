@@ -19,6 +19,8 @@ export function* SignIn({ payload }) {
 
         if (!user.provider) {
             toast.error('usuário não é prestador de serviço');
+            yield put(SignFailure());
+            return;
         }
 
         api.defaults.headers.Authorization = `Bearer ${token}`;

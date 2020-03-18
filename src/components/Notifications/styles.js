@@ -37,9 +37,10 @@ export const NotificationList = styled.div`
     width: 260px;
     left: calc(50% - 130px);
     top: calc(100% + 30px);
-    background: rgba(0, 0, 0, 0.6);
     border-radius: 4px;
+    background: rgba(0, 0, 0, 0.6);
     padding: 15px 5px;
+    display: ${props => (props.visible ? 'block' : 'none')};
 
     &::before {
         content: '';
@@ -80,7 +81,6 @@ export const Notification = styled.div`
         color: ${lighten(0.2, '#7159c1')};
         padding: 0 5px;
         margin: 0 5px;
-        border-left: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     ${props =>
